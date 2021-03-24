@@ -1,0 +1,12 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1>Delete page</h1>
+<hr>
+
+<form asp-controller="home" asp-action="Delete" method="POST">
+    <input type="hidden" asp-for="Id">
+    <button type="submit" class="btn btn-danger">Delete Product</button>
+</form> 

@@ -1,0 +1,61 @@
+﻿@model List<Product>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<br>
+<br>
+<h1>INVENTORY MANAGEMENT SYSTEM</h1>
+<br>
+<br>
+
+<div class="jumbotron ">
+ 
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Product Id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Quantities</th>
+      <th scope="col">Price</th>
+      <th scope="col">DOE</th>
+       <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+        </tr>
+  </thead>
+  <tbody>
+      @foreach(var data in Model)
+      {
+    <tr>
+      <td>@data.Id</td>
+      <td><a href="/home/details?id=@data.Id">@data.Name</a></td>
+      <td>@data.Quantities</td>
+      <td>@data.Price</td>
+      <td>@data.DOE</td>
+       <td><a href="/home/edit?id=@data.Id"> <button type="button" class="btn btn-success">Edit</button></a></td>
+      <td><a href="/home/delete?id=@data.Id"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+    </tr>
+      }
+   
+   
+  </tbody>
+</table>
+
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
